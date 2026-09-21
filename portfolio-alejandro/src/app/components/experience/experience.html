@@ -1,0 +1,144 @@
+```html
+<section
+  id="experiencia"
+  class="relative overflow-hidden bg-white dark:bg-slate-950 py-24 transition-colors duration-300"
+>
+  <!-- Fondo sutil -->
+  <div class="absolute inset-0 -z-10">
+    <div
+      class="absolute left-[-150px] top-20 h-72 w-72 rounded-full bg-blue-100/30 dark:bg-blue-900/20 blur-3xl"
+    ></div>
+
+    <div
+      class="absolute bottom-0 right-[-120px] h-80 w-80 rounded-full bg-indigo-100/20 dark:bg-indigo-900/20 blur-3xl"
+    ></div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-6 lg:px-8">
+
+    <!-- Cabecera -->
+    <div class="mb-16 max-w-3xl">
+      <span
+        class="mb-4 inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-950/40 px-3 py-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
+      >
+        Trayectoria
+      </span>
+
+      <h2
+        class="text-4xl font-extrabold tracking-tight text-slate-950 dark:text-white md:text-5xl"
+      >
+        Experiencia profesional
+      </h2>
+
+      <p
+        class="mt-5 max-w-2xl text-lg leading-relaxed text-slate-500 dark:text-slate-400"
+      >
+        Experiencia en desarrollo de software, aplicaciones empresariales y
+        desarrollo web, trabajando con diferentes tecnologías y entornos.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative">
+
+      <!-- Línea vertical -->
+      <div
+        class="absolute left-[189px] top-0 hidden h-full w-px bg-slate-200 dark:bg-slate-800 md:block"
+      ></div>
+
+      <div class="space-y-10">
+
+        @for (job of experienceData; track job.company; let i = $index) {
+
+          <article
+            class="relative md:grid md:grid-cols-[190px_minmax(0,1fr)] md:gap-10"
+          >
+
+            <!-- Punto del timeline -->
+            <div
+              class="absolute left-[189px] top-8 hidden h-3 w-3 -translate-x-1/2 rounded-full border-4 border-white dark:border-slate-950 bg-blue-600 shadow-sm md:block"
+            ></div>
+
+            <!-- Fecha -->
+            <div
+              class="mb-4 md:mb-0 md:pt-8 md:pr-6 md:text-right"
+            >
+              <span
+                class="inline-block whitespace-nowrap rounded-full bg-blue-50 dark:bg-blue-950/40 px-3 py-1 text-sm font-bold tracking-wide text-blue-600 dark:text-blue-400 md:bg-transparent md:px-0 md:py-0"
+              >
+                {{ job.date }}
+              </span>
+            </div>
+
+            <!-- Tarjeta -->
+            <div
+              class="group relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-xl hover:shadow-slate-900/5 md:p-8"
+            >
+
+              <!-- Línea decorativa superior -->
+              <div
+                class="absolute left-0 right-0 top-0 h-1 rounded-t-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              ></div>
+
+              <!-- Cabecera de tarjeta -->
+              <div
+                class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between"
+              >
+                <div>
+                  <p
+                    class="mb-1 text-sm font-semibold uppercase tracking-wider text-blue-600"
+                  >
+                    {{ job.company }}
+                  </p>
+
+                  <h3
+                    class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white"
+                  >
+                    {{ job.role }}
+                  </h3>
+                </div>
+
+                <!-- Número -->
+                <span
+                  class="text-sm font-bold tracking-widest text-slate-200 dark:text-slate-700"
+                >
+                  {{ (i + 1).toString().padStart(2, '0') }}
+                </span>
+              </div>
+
+              <!-- Descripción -->
+              <p
+                class="mb-7 max-w-3xl text-base leading-relaxed text-slate-500 dark:text-slate-400"
+              >
+                {{ job.description }}
+              </p>
+
+              <!-- Tecnologías -->
+              <div class="border-t border-slate-100 dark:border-slate-800 pt-6">
+                <p
+                  class="mb-3 text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500"
+                >
+                  Tecnologías y herramientas
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                  @for (tech of job.techStack; track tech) {
+                    <span
+                      class="rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3 py-1.5 text-xs font-semibold text-slate-600 dark:text-slate-300 transition-colors group-hover:border-blue-100 dark:group-hover:border-blue-800 group-hover:bg-blue-50/50 dark:group-hover:bg-blue-950/40"
+                    >
+                      {{ tech }}
+                    </span>
+                  }
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+        }
+
+      </div>
+    </div>
+  </div>
+</section>
+```

@@ -1,0 +1,274 @@
+```html
+<section
+  id="habilidades"
+  class="relative overflow-hidden bg-slate-50 dark:bg-slate-950 py-24 transition-colors duration-300"
+>
+
+  <!-- Fondos decorativos -->
+  <div class="absolute inset-0 -z-10">
+    <div
+      class="absolute left-[-140px] top-20 h-72 w-72 rounded-full bg-blue-100/30 dark:bg-blue-900/20 blur-3xl"
+    ></div>
+
+    <div
+      class="absolute bottom-[-100px] right-[-100px] h-80 w-80 rounded-full bg-indigo-100/20 dark:bg-indigo-900/20 blur-3xl"
+    ></div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-6 lg:px-8">
+
+    <!-- Cabecera -->
+    <div class="mb-16 max-w-3xl">
+      <span
+        class="mb-4 inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-950/40 px-3 py-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
+      >
+        Stack técnico
+      </span>
+
+      <h2
+        class="text-4xl font-extrabold tracking-tight text-slate-950 dark:text-white md:text-5xl"
+      >
+        Tecnologías y habilidades
+      </h2>
+
+      <p
+        class="mt-5 max-w-2xl text-lg leading-relaxed text-slate-500 dark:text-slate-400"
+      >
+        Tecnologías con las que he trabajado durante mi formación y experiencia
+        profesional, cubriendo desarrollo backend, frontend, integración de
+        sistemas, bases de datos e inteligencia artificial.
+      </p>
+    </div>
+
+    <!-- Categorías -->
+    <div class="grid grid-cols-1 gap-7 md:grid-cols-3">
+
+      <!-- Backend -->
+      <article
+        class="group relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-xl hover:shadow-slate-900/5 md:p-8"
+      >
+
+        <!-- Línea decorativa -->
+        <div
+          class="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        ></div>
+
+        <!-- Icono -->
+        <div
+          class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 transition-colors duration-300 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.8"
+            stroke="currentColor"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8.25 9.75 5 12l3.25 2.25M15.75 9.75 19 12l-3.25 2.25M14.25 6.75 9.75 17.25"
+            />
+          </svg>
+        </div>
+
+        <div class="mb-6">
+          <div class="mb-1 flex items-center justify-between gap-4">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+              Backend & Sistemas
+            </h3>
+
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-slate-300 dark:text-slate-600"
+            >
+              {{ skillsData.backend.length }}
+            </span>
+          </div>
+
+          <p class="text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+            Desarrollo de aplicaciones, APIs y soluciones empresariales.
+          </p>
+        </div>
+
+        <!-- Skills -->
+        <div class="flex flex-wrap gap-2">
+          @for (skill of skillsData.backend; track skill) {
+            <span
+              class="rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3 py-1.5 text-sm font-semibold text-slate-600 dark:text-slate-300 transition-all duration-200 hover:border-blue-200 dark:hover:border-blue-700 hover:bg-blue-50 dark:hover:bg-blue-950/40 hover:text-blue-700 dark:hover:text-blue-400"
+            >
+              {{ skill }}
+            </span>
+          }
+        </div>
+
+      </article>
+
+
+      <!-- Frontend -->
+      <article
+        class="group relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-xl hover:shadow-slate-900/5 md:p-8"
+      >
+
+        <!-- Línea decorativa -->
+        <div
+          class="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        ></div>
+
+        <!-- Icono -->
+        <div
+          class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 transition-colors duration-300 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/40"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.8"
+            stroke="currentColor"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 6.75A2.25 2.25 0 0 1 6.75 4.5h10.5a2.25 2.25 0 0 1 2.25 2.25v8.5a2.25 2.25 0 0 1-2.25 2.25H6.75a2.25 2.25 0 0 1-2.25-2.25v-8.5ZM8.25 20h7.5M12 17.5V20"
+            />
+          </svg>
+        </div>
+
+        <div class="mb-6">
+          <div class="mb-1 flex items-center justify-between gap-4">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+              Frontend
+            </h3>
+
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-slate-300 dark:text-slate-600"
+            >
+              {{ skillsData.frontend.length }}
+            </span>
+          </div>
+
+          <p class="text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+            Interfaces web modernas, responsivas y orientadas a usuario.
+          </p>
+        </div>
+
+        <!-- Skills -->
+        <div class="flex flex-wrap gap-2">
+          @for (skill of skillsData.frontend; track skill) {
+            <span
+              class="rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3 py-1.5 text-sm font-semibold text-slate-600 dark:text-slate-300 transition-all duration-200 hover:border-indigo-200 dark:hover:border-indigo-700 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 hover:text-indigo-700 dark:hover:text-indigo-400"
+            >
+              {{ skill }}
+            </span>
+          }
+        </div>
+
+      </article>
+
+
+      <!-- Herramientas / Ecosistema -->
+      <article
+        class="group relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-xl hover:shadow-slate-900/5 md:p-8"
+      >
+
+        <!-- Línea decorativa -->
+        <div
+          class="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        ></div>
+
+        <!-- Icono -->
+        <div
+          class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 transition-colors duration-300 group-hover:bg-violet-100 dark:group-hover:bg-violet-900/40"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.8"
+            stroke="currentColor"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 6.75h3m-5.25 10.5h7.5M12 3.75v2.25m0 12v2.25M5.64 5.64l1.59 1.59m9.54 9.54 1.59 1.59M3.75 12H6m12 0h2.25M5.64 18.36l1.59-1.59m9.54-9.54 1.59-1.59"
+            />
+            <circle cx="12" cy="12" r="3.25" />
+          </svg>
+        </div>
+
+        <div class="mb-6">
+          <div class="mb-1 flex items-center justify-between gap-4">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+              Ecosistema & IA
+            </h3>
+
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-slate-300 dark:text-slate-600"
+            >
+              {{ skillsData.tools.length }}
+            </span>
+          </div>
+
+          <p class="text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+            Contenedores, bases de datos, mensajería, integración y tecnologías
+            de inteligencia artificial.
+          </p>
+        </div>
+
+        <!-- Skills -->
+        <div class="flex flex-wrap gap-2">
+          @for (skill of skillsData.tools; track skill) {
+            <span
+              class="rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3 py-1.5 text-sm font-semibold text-slate-600 dark:text-slate-300 transition-all duration-200 hover:border-violet-200 dark:hover:border-violet-700 hover:bg-violet-50 dark:hover:bg-violet-950/40 hover:text-violet-700 dark:hover:text-violet-400"
+            >
+              {{ skill }}
+            </span>
+          }
+        </div>
+
+      </article>
+
+    </div>
+
+    <!-- Mensaje inferior -->
+    <div
+      class="mt-10 flex flex-col gap-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm md:flex-row md:items-center md:justify-between md:px-8"
+    >
+      <div>
+        <p class="text-sm font-bold text-slate-900 dark:text-white">
+          Un stack orientado a construir soluciones completas
+        </p>
+
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+          Desde la interfaz hasta la lógica de negocio, integración y datos.
+        </p>
+      </div>
+
+      <a
+        href="#contacto"
+        class="inline-flex w-fit items-center gap-2 rounded-xl bg-slate-950 dark:bg-white px-5 py-3 text-sm font-semibold text-white dark:text-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white hover:shadow-lg hover:shadow-blue-600/20"
+      >
+        Hablemos
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="h-4 w-4"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+          />
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+```
