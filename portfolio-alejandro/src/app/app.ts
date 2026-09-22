@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+
 import { HeroComponent } from './components/hero/hero';
-import { Projects } from './components/projects/projects'; 
+import { Projects } from './components/projects/projects';
 import { Experience } from './components/experience/experience';
 import { Skills } from './components/skills/skills';
 import { Education } from './components/education/education';
@@ -10,13 +11,30 @@ import { PreferencesService } from './services/preferences.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  // 2. Añadimos Projects al array
-  imports: [HeroComponent, Projects, Experience, Skills, Education, Footer], 
+  imports: [
+    HeroComponent,
+    Projects,
+    Experience,
+    Skills,
+    Education,
+    Footer
+  ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App { 
+export class App {
+
+  mobileMenuOpen = signal(false);
+
   constructor(
     public preferences: PreferencesService
   ) {}
+
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen.update(value => !value);
+  }
+
+  closeMobileMenu(): void {
+    this.mobileMenuOpen.set(false);
+  }
 }

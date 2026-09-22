@@ -8,23 +8,27 @@
     <!-- Cabecera -->
     <div class="max-w-3xl mb-14">
       <span
-        class="inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-950/40 px-3 py-1 text-sm font-semibold text-blue-600 dark:text-blue-400 mb-4"
+        class="mb-4 inline-flex items-center rounded-full
+              bg-blue-50 px-3 py-1
+              text-sm font-semibold text-blue-600
+              dark:bg-blue-950/40 dark:text-blue-400"
       >
-        Portfolio
+        {{ ui[preferences.language()].projects.label }}
       </span>
 
       <h2
-        class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-950 dark:text-white"
+        class="text-4xl font-extrabold tracking-tight
+              text-slate-950 dark:text-white
+              md:text-5xl"
       >
-        Proyectos destacados
+        {{ ui[preferences.language()].projects.title }}
       </h2>
 
       <p
-        class="mt-5 text-lg leading-relaxed text-slate-500 dark:text-slate-400 max-w-2xl"
+        class="mt-5 max-w-2xl text-lg leading-relaxed
+              text-slate-500 dark:text-slate-400"
       >
-        Una selección de proyectos en los que he trabajado, combinando
-        desarrollo, diseño y tecnologías modernas para crear soluciones
-        funcionales y mantenibles.
+        {{ ui[preferences.language()].projects.description }}
       </p>
     </div>
 
@@ -68,16 +72,20 @@
 
             <!-- Título -->
             <h3
-              class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4 transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400"
+              class="text-2xl font-bold tracking-tight
+                    text-slate-900 dark:text-white
+                    transition-colors duration-300
+                    group-hover:text-blue-600 dark:group-hover:text-blue-400"
             >
-              {{ project.title }}
+              {{ project.title[preferences.language()] }}
             </h3>
 
-            <!-- Descripción -->
             <p
-              class="text-base leading-relaxed text-slate-500 dark:text-slate-400 mb-7 flex-grow"
+              class="text-base leading-relaxed
+                    text-slate-500 dark:text-slate-400
+                    mb-7 flex-grow"
             >
-              {{ project.description }}
+              {{ project.description[preferences.language()] }}
             </p>
 
             <!-- Tecnologías -->
@@ -101,9 +109,13 @@
                 [href]="project.link"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                class="inline-flex items-center gap-2
+                      text-sm font-bold
+                      text-slate-900 dark:text-slate-200
+                      hover:text-blue-600 dark:hover:text-blue-400
+                      transition-colors"
               >
-                Ver proyecto
+                {{ ui[preferences.language()].projects.button }}
 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +123,8 @@
                   viewBox="0 0 24 24"
                   stroke-width="2"
                   stroke="currentColor"
-                  class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                  class="h-4 w-4 transition-transform
+                        group-hover:translate-x-1"
                 >
                   <path
                     stroke-linecap="round"

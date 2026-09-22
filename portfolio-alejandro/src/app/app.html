@@ -1,142 +1,97 @@
 <header class="fixed top-0 left-0 z-50 w-full">
   <nav
-    class="border-b border-slate-200/70 bg-white/85 backdrop-blur-xl
-           dark:border-slate-800/70 dark:bg-slate-950/85"
+    class="border-b border-slate-200/70 bg-white/90 backdrop-blur-xl
+           dark:border-slate-800/70 dark:bg-slate-950/90"
   >
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
       <div class="flex h-[72px] items-center justify-between">
 
         <!-- Logo -->
+
         <a
           href="#inicio"
-          class="text-[21px] font-extrabold tracking-tight text-slate-900 dark:text-white"
+          (click)="closeMobileMenu()"
+          class="group flex items-center gap-3"
         >
-          Alejandro<span class="text-blue-600">.</span>
+          <img
+            src="/assets/ap-logo.png"
+            alt="AP - Alejandro Palomares Orugo"
+            class="h-10 w-10 rounded-xl object-cover
+                  transition-transform duration-300
+                  group-hover:scale-105"
+          />
+
+          <span
+            class="text-[21px] font-extrabold tracking-tight
+                  text-slate-900 dark:text-white"
+          >
+            Alejandro<span class="text-blue-600">.</span>
+          </span>
         </a>
 
-        <!-- Navegación -->
+        <!-- Desktop -->
         <div class="hidden md:flex items-center gap-2">
 
           <a
             href="#inicio"
-            class="rounded-lg px-4 py-2.5 text-sm font-semibold text-slate-700
-                   hover:bg-slate-100 hover:text-slate-950
-                   dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white
-                   transition-all"
+            class="rounded-lg px-4 py-2.5 text-sm font-semibold
+                   text-slate-700 hover:bg-slate-100
+                   dark:text-slate-300 dark:hover:bg-slate-800"
           >
             Inicio
           </a>
 
           <a
             href="#proyectos"
-            class="rounded-lg px-4 py-2.5 text-sm font-semibold text-slate-700
-                   hover:bg-slate-100 hover:text-slate-950
-                   dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white
-                   transition-all"
+            class="rounded-lg px-4 py-2.5 text-sm font-semibold
+                   text-slate-700 hover:bg-slate-100
+                   dark:text-slate-300 dark:hover:bg-slate-800"
           >
             Proyectos
           </a>
 
           <a
             href="#experiencia"
-            class="rounded-lg px-4 py-2.5 text-sm font-semibold text-slate-700
-                   hover:bg-slate-100 hover:text-slate-950
-                   dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white
-                   transition-all"
+            class="rounded-lg px-4 py-2.5 text-sm font-semibold
+                   text-slate-700 hover:bg-slate-100
+                   dark:text-slate-300 dark:hover:bg-slate-800"
           >
             Experiencia
           </a>
 
           <a
             href="#educacion"
-            class="rounded-lg px-4 py-2.5 text-sm font-semibold text-slate-700
-                   hover:bg-slate-100 hover:text-slate-950
-                   dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white
-                   transition-all"
+            class="rounded-lg px-4 py-2.5 text-sm font-semibold
+                   text-slate-700 hover:bg-slate-100
+                   dark:text-slate-300 dark:hover:bg-slate-800"
           >
             Educación
           </a>
 
-        </div>
-
-        <!-- Acciones -->
-        <div class="hidden md:flex items-center gap-2">
-
-          <!-- Modo oscuro -->
+          <!-- Tema -->
           <button
             type="button"
             (click)="preferences.toggleTheme()"
-            class="flex h-10 w-10 items-center justify-center rounded-xl
+            class="ml-2 flex h-10 w-10 items-center justify-center rounded-xl
                    border border-slate-200 bg-white text-slate-600
-                   hover:bg-slate-100 hover:text-slate-950
-                   dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300
-                   dark:hover:bg-slate-800 dark:hover:text-white
-                   transition-all"
-            [attr.aria-label]="
-              preferences.theme() === 'light'
-                ? 'Activar modo oscuro'
-                : 'Activar modo claro'
-            "
+                   dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300"
           >
-
             @if (preferences.theme() === 'light') {
-
-              <!-- Luna -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="h-5 w-5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21 12.79A9 9 0 1 1 11.21 3
-                     7 7 0 0 0 21 12.79Z"
-                />
-              </svg>
-
+              🌙
             } @else {
-
-              <!-- Sol -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="h-5 w-5"
-              >
-                <circle cx="12" cy="12" r="4" />
-
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41
-                     M17.66 17.66l1.41 1.41
-                     M2 12h2m16 0h2
-                     M4.93 19.07l1.41-1.41
-                     M17.66 6.34l1.41-1.41"
-                />
-              </svg>
-
+              ☀️
             }
-
           </button>
 
           <!-- Idioma -->
           <button
             type="button"
             (click)="preferences.toggleLanguage()"
-            class="flex h-10 min-w-[52px] items-center justify-center rounded-xl
-                   border border-slate-200 bg-white px-3
+            class="flex h-10 min-w-[52px] items-center justify-center
+                   rounded-xl border border-slate-200 bg-white px-3
                    text-xs font-bold text-slate-600
-                   hover:bg-slate-100 hover:text-slate-950
-                   dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300
-                   dark:hover:bg-slate-800 dark:hover:text-white
-                   transition-all"
+                   dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300"
           >
             {{ preferences.language() === 'es' ? 'EN' : 'ES' }}
           </button>
@@ -144,33 +99,137 @@
           <!-- Contacto -->
           <a
             href="#contacto"
-            class="ml-2 inline-flex items-center gap-2 rounded-xl
-                   bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white
-                   hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-600/20
-                   dark:bg-blue-600 dark:hover:bg-blue-500
-                   transition-all"
+            class="ml-2 rounded-xl bg-slate-950 px-5 py-2.5
+                   text-sm font-semibold text-white
+                   hover:bg-blue-600
+                   dark:bg-blue-600 dark:hover:bg-blue-500"
           >
             Hablemos
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-              class="h-4 w-4"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-              />
-            </svg>
           </a>
+        </div>
+
+        <!-- Mobile controls -->
+        <div class="flex items-center gap-2 md:hidden">
+
+          <!-- Tema -->
+          <button
+            type="button"
+            (click)="preferences.toggleTheme()"
+            class="flex h-10 w-10 items-center justify-center rounded-xl
+                   border border-slate-200 bg-white
+                   dark:border-slate-700 dark:bg-slate-900"
+          >
+            @if (preferences.theme() === 'light') {
+              🌙
+            } @else {
+              ☀️
+            }
+          </button>
+
+          <!-- Idioma -->
+          <button
+            type="button"
+            (click)="preferences.toggleLanguage()"
+            class="flex h-10 min-w-[46px] items-center justify-center
+                   rounded-xl border border-slate-200 bg-white
+                   text-xs font-bold
+                   dark:border-slate-700 dark:bg-slate-900"
+          >
+            {{ preferences.language() === 'es' ? 'EN' : 'ES' }}
+          </button>
+
+          <!-- Hamburguesa -->
+          <button
+            type="button"
+            (click)="toggleMobileMenu()"
+            class="flex h-10 w-10 items-center justify-center rounded-xl
+                   border border-slate-200 bg-white text-slate-700
+                   dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+            aria-label="Abrir menú"
+          >
+            @if (!mobileMenuOpen()) {
+              ☰
+            } @else {
+              ✕
+            }
+          </button>
 
         </div>
 
       </div>
+
+      <!-- Menú móvil -->
+      @if (mobileMenuOpen()) {
+        <div
+          class="border-t border-slate-200 py-4 dark:border-slate-800 md:hidden"
+        >
+
+          <div class="flex flex-col gap-1">
+
+            <a
+              href="#inicio"
+              (click)="closeMobileMenu()"
+              class="rounded-xl px-4 py-3 text-sm font-semibold
+                     text-slate-700 hover:bg-slate-100
+                     dark:text-slate-300 dark:hover:bg-slate-800"
+            >
+              Inicio
+            </a>
+
+            <a
+              href="#proyectos"
+              (click)="closeMobileMenu()"
+              class="rounded-xl px-4 py-3 text-sm font-semibold
+                     text-slate-700 hover:bg-slate-100
+                     dark:text-slate-300 dark:hover:bg-slate-800"
+            >
+              Proyectos
+            </a>
+
+            <a
+              href="#experiencia"
+              (click)="closeMobileMenu()"
+              class="rounded-xl px-4 py-3 text-sm font-semibold
+                     text-slate-700 hover:bg-slate-100
+                     dark:text-slate-300 dark:hover:bg-slate-800"
+            >
+              Experiencia
+            </a>
+
+            <a
+              href="#habilidades"
+              (click)="closeMobileMenu()"
+              class="rounded-xl px-4 py-3 text-sm font-semibold
+                     text-slate-700 hover:bg-slate-100
+                     dark:text-slate-300 dark:hover:bg-slate-800"
+            >
+              Habilidades
+            </a>
+
+            <a
+              href="#educacion"
+              (click)="closeMobileMenu()"
+              class="rounded-xl px-4 py-3 text-sm font-semibold
+                     text-slate-700 hover:bg-slate-100
+                     dark:text-slate-300 dark:hover:bg-slate-800"
+            >
+              Educación
+            </a>
+
+            <a
+              href="#contacto"
+              (click)="closeMobileMenu()"
+              class="mt-2 rounded-xl bg-slate-950 px-4 py-3 text-center
+                     text-sm font-semibold text-white
+                     dark:bg-blue-600"
+            >
+              Hablemos
+            </a>
+
+          </div>
+        </div>
+      }
+
     </div>
   </nav>
 </header>

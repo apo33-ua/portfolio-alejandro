@@ -18,24 +18,33 @@
 
     <!-- Cabecera -->
     <div class="mb-16 max-w-3xl">
+
       <span
-        class="mb-4 inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-950/40 px-3 py-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
+        class="mb-4 inline-flex items-center rounded-full
+              bg-blue-50 px-3 py-1
+              text-sm font-semibold
+              text-blue-600
+              dark:bg-blue-950/40 dark:text-blue-400"
       >
-        Trayectoria
+        {{ ui[preferences.language()].experience.label }}
       </span>
 
       <h2
-        class="text-4xl font-extrabold tracking-tight text-slate-950 dark:text-white md:text-5xl"
+        class="text-4xl font-extrabold tracking-tight
+              text-slate-950 dark:text-white
+              md:text-5xl"
       >
-        Experiencia profesional
+        {{ ui[preferences.language()].experience.title }}
       </h2>
 
       <p
-        class="mt-5 max-w-2xl text-lg leading-relaxed text-slate-500 dark:text-slate-400"
+        class="mt-5 max-w-2xl
+              text-lg leading-relaxed
+              text-slate-500 dark:text-slate-400"
       >
-        Experiencia en desarrollo de software, aplicaciones empresariales y
-        desarrollo web, trabajando con diferentes tecnologías y entornos.
+        {{ ui[preferences.language()].experience.description }}
       </p>
+
     </div>
 
     <!-- Timeline -->
@@ -92,9 +101,10 @@
                   </p>
 
                   <h3
-                    class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white"
+                    class="text-2xl font-bold tracking-tight
+                          text-slate-900 dark:text-white"
                   >
-                    {{ job.role }}
+                    {{ job.role[preferences.language()] }}
                   </h3>
                 </div>
 
@@ -108,17 +118,19 @@
 
               <!-- Descripción -->
               <p
-                class="mb-7 max-w-3xl text-base leading-relaxed text-slate-500 dark:text-slate-400"
+                class="mb-7 max-w-3xl
+                      text-base leading-relaxed
+                      text-slate-500 dark:text-slate-400"
               >
-                {{ job.description }}
+                {{ job.description[preferences.language()] }}
               </p>
 
               <!-- Tecnologías -->
               <div class="border-t border-slate-100 dark:border-slate-800 pt-6">
                 <p
-                  class="mb-3 text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500"
+                  class="mb-3 text-xs font-bold uppercase tracking-widest text-slate-400"
                 >
-                  Tecnologías y herramientas
+                  {{ ui[preferences.language()].experience.tech }}
                 </p>
 
                 <div class="flex flex-wrap gap-2">

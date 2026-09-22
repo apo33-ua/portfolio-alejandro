@@ -5,8 +5,13 @@
 body {
   margin: 0;
   background: #f8fafc;
+  overflow-x: hidden;
 }
 
 html.dark body {
   background: #020617;
+}
+
+html {
+  scroll-behavior: smooth;
 }

@@ -48,43 +48,43 @@
         <!-- Estado -->
         <div
           class="mb-6 inline-flex items-center gap-2 rounded-full
-                 border border-blue-100 dark:border-blue-900/60
-                 bg-white/80 dark:bg-slate-900/80
-                 px-4 py-2
-                 text-sm font-semibold
-                 text-blue-700 dark:text-blue-400
-                 shadow-sm backdrop-blur
-                 transition-colors duration-300"
+                border border-blue-100 dark:border-blue-900/60
+                bg-white/80 dark:bg-slate-900/80
+                px-4 py-2
+                text-sm font-semibold
+                text-blue-700 dark:text-blue-400
+                shadow-sm backdrop-blur
+                transition-colors duration-300"
         >
           <span class="relative flex h-2.5 w-2.5">
             <span
               class="absolute inline-flex h-full w-full animate-ping
-                     rounded-full bg-emerald-400 opacity-75"
+                    rounded-full bg-emerald-400 opacity-75"
             ></span>
 
             <span
               class="relative inline-flex h-2.5 w-2.5
-                     rounded-full bg-emerald-500"
+                    rounded-full bg-emerald-500"
             ></span>
           </span>
 
-          Disponible para nuevos proyectos
+          {{ ui[preferences.language()].hero.available }}
         </div>
 
         <!-- Título -->
         <h1
           class="mb-7 text-5xl font-extrabold leading-[1.15]
-                 tracking-tight text-slate-950
-                 dark:text-white
-                 md:text-6xl lg:text-7xl"
+                tracking-tight text-slate-950
+                dark:text-white
+                md:text-6xl lg:text-7xl"
         >
-          Hola, soy
+          {{ ui[preferences.language()].hero.greeting }}
 
           <span
             class="mt-2 block pb-3
-                   bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600
-                   bg-clip-text
-                   text-transparent"
+                  bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600
+                  bg-clip-text
+                  text-transparent"
           >
             {{ heroData.name }}
           </span>
@@ -93,21 +93,21 @@
         <!-- Headline -->
         <h2
           class="mb-6 max-w-2xl
-                 text-2xl font-semibold leading-tight
-                 text-slate-800 dark:text-slate-200
-                 md:text-3xl"
+                text-2xl font-semibold leading-tight
+                text-slate-800 dark:text-slate-200
+                md:text-3xl"
         >
-          {{ heroData.headline }}
+          {{ heroData.headline[preferences.language()] }}
         </h2>
 
         <!-- Descripción -->
         <p
           class="mb-9 max-w-2xl
-                 text-lg leading-relaxed
-                 text-slate-500 dark:text-slate-400
-                 md:text-xl"
+                text-lg leading-relaxed
+                text-slate-500 dark:text-slate-400
+                md:text-xl"
         >
-          {{ heroData.description }}
+          {{ heroData.description[preferences.language()] }}
         </p>
 
         <!-- CTAs -->
@@ -117,17 +117,17 @@
           <a
             href="#proyectos"
             class="group inline-flex items-center justify-center gap-2
-                   rounded-xl
-                   bg-slate-950 dark:bg-blue-600
-                   px-7 py-4
-                   text-base font-semibold text-white
-                   shadow-lg shadow-slate-900/10
-                   transition-all duration-300
-                   hover:-translate-y-1
-                   hover:bg-blue-600 dark:hover:bg-blue-500
-                   hover:shadow-xl hover:shadow-blue-600/20"
+                  rounded-xl
+                  bg-slate-950 dark:bg-blue-600
+                  px-7 py-4
+                  text-base font-semibold text-white
+                  shadow-lg shadow-slate-900/10
+                  transition-all duration-300
+                  hover:-translate-y-1
+                  hover:bg-blue-600 dark:hover:bg-blue-500
+                  hover:shadow-xl hover:shadow-blue-600/20"
           >
-            Ver proyectos
+            {{ ui[preferences.language()].hero.projects }}
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +136,7 @@
               stroke-width="2"
               stroke="currentColor"
               class="h-5 w-5 transition-transform duration-300
-                     group-hover:translate-x-1"
+                    group-hover:translate-x-1"
             >
               <path
                 stroke-linecap="round"
@@ -150,21 +150,21 @@
           <a
             href="#contacto"
             class="inline-flex items-center justify-center
-                   rounded-xl
-                   border border-slate-200 dark:border-slate-700
-                   bg-white/80 dark:bg-slate-900/80
-                   px-7 py-4
-                   text-base font-semibold
-                   text-slate-700 dark:text-slate-200
-                   shadow-sm backdrop-blur
-                   transition-all duration-300
-                   hover:-translate-y-1
-                   hover:border-blue-200 dark:hover:border-blue-800
-                   hover:bg-white dark:hover:bg-slate-800
-                   hover:text-blue-600 dark:hover:text-blue-400
-                   hover:shadow-lg"
+                  rounded-xl
+                  border border-slate-200 dark:border-slate-700
+                  bg-white/80 dark:bg-slate-900/80
+                  px-7 py-4
+                  text-base font-semibold
+                  text-slate-700 dark:text-slate-200
+                  shadow-sm backdrop-blur
+                  transition-all duration-300
+                  hover:-translate-y-1
+                  hover:border-blue-200 dark:hover:border-blue-800
+                  hover:bg-white dark:hover:bg-slate-800
+                  hover:text-blue-600 dark:hover:text-blue-400
+                  hover:shadow-lg"
           >
-            Hablemos
+            {{ ui[preferences.language()].hero.contact }}
           </a>
 
         </div>
@@ -172,13 +172,10 @@
         <!-- Microcopy empresarial -->
         <div
           class="flex flex-wrap items-center
-                 gap-x-6 gap-y-3
-                 text-sm text-slate-500 dark:text-slate-400"
+                gap-x-6 gap-y-3
+                text-sm text-slate-500 dark:text-slate-400"
         >
-
-          <!-- Código limpio -->
           <span class="flex items-center gap-2">
-
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -200,17 +197,14 @@
               />
             </svg>
 
-            Código limpio y mantenible
+            {{ ui[preferences.language()].hero.cleanCode }}
           </span>
 
-          <!-- Separador -->
           <span
             class="hidden h-4 w-px bg-slate-200 dark:bg-slate-800 sm:block"
           ></span>
 
-          <!-- Resultados -->
           <span class="flex items-center gap-2">
-
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -228,9 +222,8 @@
               <circle cx="12" cy="12" r="9" />
             </svg>
 
-            Orientado a resultados
+            {{ ui[preferences.language()].hero.results }}
           </span>
-
         </div>
       </div>
 
@@ -320,7 +313,7 @@
               <div class="pl-5">
                 <span class="text-blue-400">goal:</span>
                 <span class="text-slate-300">
-                  "Crear productos que aporten valor"
+                  "{{ ui[preferences.language()].hero.goal }}"
                 </span>
               </div>
 
@@ -340,18 +333,23 @@
                      p-4"
             >
 
-              <div class="flex items-center justify-between">
+              <div
+                class="mt-10 rounded-xl
+                      border border-slate-800
+                      bg-slate-900/80
+                      p-4"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="mb-1 text-xs text-slate-500">
+                      {{ ui[preferences.language()].hero.currentStatus }}
+                    </p>
 
-                <div>
-                  <p class="mb-1 text-xs text-slate-500">
-                    Actualmente
-                  </p>
-
-                  <p class="text-sm font-semibold text-white">
-                    Abierto a nuevas oportunidades
-                  </p>
+                    <p class="text-sm font-semibold text-white">
+                      {{ ui[preferences.language()].hero.openOpportunities }}
+                    </p>
+                  </div>
                 </div>
-
               </div>
 
             </div>
