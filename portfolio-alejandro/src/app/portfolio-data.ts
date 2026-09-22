@@ -142,7 +142,7 @@ export const PORTFOLIO_DATA = {
 
     image: "assets/projects/firefighter-frenzy.png",
 
-    link: "#"
+    link: "https://firefighter-frenzy.itch.io/firefighter-frenzy"
   }
 ],
   skills: {
